@@ -1,0 +1,20 @@
+{
+  "name": "javascript-profesional",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielSocorro/javascript-profesional.git"
+  },
+  "keywords": [],
+  "author": "Daniel-Socorro <daniel.socorro.c@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DanielSocorro/javascript-profesional/issues"
+  },
+  "homepage": "https://github.com/DanielSocorro/javascript-profesional#readme"
+}
