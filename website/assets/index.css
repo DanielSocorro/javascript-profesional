@@ -14,13 +14,14 @@ body {
 header {
   text-align: center;
   padding: 3rem 0;
-  background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+  background-image: linear-gradient(120deg, #939cfb 0%, #7c57f5 100%);
   color: white;
 }
 
 header > h1 {
-  font-weight: normal;
-  font-style: italic;
+  font-weight: bold;
+  font-size: 3.5rem;
+ 
 }
 
 main {

@@ -1,12 +1,15 @@
 import MediaPlayer from './MediaPlayer.js';
+import Autoplay from './plugins/AutoPlay.js';
 
 const video = document.querySelector("video");
 const playButton = document.querySelector("#playButton");
 const muteButton = document.querySelector("#muteButton");
 const timeElement = document.querySelector("#time");
 
+const player = new MediaPlayer({ el: video, plugins: [
+    new Autoplay()
+]});
 
-const player = new MediaPlayer({ el: video});
 playButton.onclick = () => {
   if (video.paused) {
     player.play();
@@ -24,6 +27,10 @@ muteButton.onclick = () => {
 }
 
 video.addEventListener("timeupdate", () => {
-  timeElement.innerHTML = Math.floor(video.currentTime / 60) + ":" + 
-  Math.floor(video.currentTime % 60);
-})
+    let second = Math.floor(video.currentTime % 60);
+    if (second < 10) {
+      second = "0" + second;
+    }
+    timeElement.innerHTML = Math.floor(video.currentTime / 60) + ":" + second;
+  });
+  
