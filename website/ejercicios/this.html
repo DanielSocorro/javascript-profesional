@@ -5,58 +5,75 @@
 
   <body>
     <a href="/ejercicios/">Go back</a>
-    <p><em>Abre la consola</em></p>
+    <p><em>Open Console</em></p>
 
     <h1>
-      <code>this</code> se refiere a un objeto. Ese objeto es el que actualmente
-      está ejecutando un pedazo de código.
+      <code>this</code> means an object. this object is actually running this code
     </h1>
 
     <script>
-      // this en el scope global
-      console.log(`this: ${this}`);
 
-      // this en el scope de una función
+      // this in the global scope
+      console.log(`this: ${this}`);
+      //C: this:[object Window]
+
+
+
+      // this in the function's scope 
       function whoIsThis() {
         return this;
       }
 
       console.log(`whoIsThis(): ${whoIsThis()}`);
+      //C: whoIsThis:[object Window]
 
-      // this en el scope de una función en strict mode
+
+
+      // this in the function's scope in strict mode
       function whoIsThisStrict() {
         'use strict';
         return this;
       }
 
       console.log(`whoIsThisStrict(): ${whoIsThisStrict()}`);
+      //C: whoIsThisStrict(): undefined
 
-      // this en el contexto de un objeto
+
+
+      // this in the context of an object
       const person = {
-        name: 'Gabriel',
-        saludar: function() {
-          console.log(`Hola soy ${this.name}`);
+        name: 'Matt',
+        greet: function() {
+          console.log(`Hi I'm ${this.name}`);
         },
       };
 
-      person.saludar();
+      person.greet();
+      //C: Hi I'm Matt
 
-      // this cuando sacamos a una función de un objeto
-      const accion = person.saludar;
+
+
+      // this when pull out a function of an object 
+      const accion = person.greet;
       accion();
+      //C: Hi I'm
 
-      // this en el contexto de una "clase"
+
+
+      // this in the context of a "class" 
       function Person(name) {
         // this = {}
         this.name = name;
       }
 
-      Person.prototype.saludar = function() {
-        console.log(`Me llamo ${this.name}`);
+      Person.prototype.greet = function() {
+        console.log(`My name is ${this.name}`);
       };
 
       const angela = new Person('Angela');
-      angela.saludar();
+      angela.greet();
+      //C: My name is Angela
+
     </script>
   </body>
 </html>
