@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>
+      Function.prototype.call, Function.prototype.apply, Function.prototype.bind
+    </title>
+  </head>
+
+  <body>
+    <a href="/website/excercises/">Go back</a>
+    <p><em>Open Console</em></p>
+
+    <ul>
+      <li><button class="call-to-action">Learn</button></li>
+      <li><button class="call-to-action">Learn More</button></li>
+      <li><button class="call-to-action">¡Never Stop Learning!</button></li>
+    </ul>
+
+    <script>
+      // Stablish `this` using `call`
+      function greet() {
+        console.log(`Hi. I'm ${this.name} ${this.lastname}`);
+      }
+
+      const richard = {
+        name: 'Richard',
+        lastname: 'Kaufman López',
+      };
+
+      greet.call(richard);
+
+      // Stablish `this` using `call` and passing arguments to the function
+      function walk(meters, direction) {
+        console.log(`${this.name} walk ${metros} meters to ${direction}.`);
+      }
+
+      walk.call(richard, 400, 'north');
+
+      // Stablish `this` using `apply` and throw arguments to the function
+      const values = [800, 'noreast'];
+      walk.apply(richard, values);
+
+      /*
+        Call - comma
+        Apply - array
+      */
+
+      // Stablish `this` in a new fuction using  `bind`
+      const daniel = { name: 'Daniel', lastname: 'Sánchez' };
+      const danielGreet = greet.bind(daniel);
+      danielGreet();
+
+      const danielWalk = walk.bind(daniel, 2000);
+      danielWalk('oeste');
+
+      // When is usefull using this methods s
+      const buttons = document.getElementsByClassName('call-to-action');
+      // buttons.forEach(button => {
+      //   button.onclick = () => alert('Never Stop Learning!');
+      // });
+
+      // NodeList
+      Array.prototype.forEach.call(buttons, button => {
+        button.onclick = () => alert('Never Stop Learning!');
+      });
+    </script>
+  </body>
+</html>
