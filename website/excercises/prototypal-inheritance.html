@@ -1,21 +1,21 @@
 <html>
   <head>
-    <title>Herencia Prototipal</title>
+    <title>Prototypal inheritance</title>
   </head>
 
   <body>
     <a href="/ejercicios/">Go back</a>
-    <p><em>Abre la consola</em></p>
+    <p><em>Open the Console</em></p>
 
     <h1>
-      <code>SomeObject.prototype</code> es un objeto donde definimos el
-      prototipo de las instancias de <code>SomeObject</code>. Es decir, las
-      instancias de <code>SomeObject</code> van a "heredar" de
+      <code>SomeObject.prototype</code> is an object where is defined by
+     the prototype of the instances of <code>SomeObject</code>. Which means, 
+     that the instances of <code>SomeObject</code> are going to "inherit" of
       <code>SomeObject.prototype</code>.
       <br />
       <br />
-      <code>SomeObject.[[Prototype]]</code> es el prototipo de
-      <code>SomeObject</code>. Es decir, <code>SomeObject</code> "hereda" de
+      <code>SomeObject.[[Prototype]]</code> is the prototype of
+      <code>SomeObject</code>. Es decir, <code>SomeObject</code> "inherit" of
       <code>SomeObject.prototype</code>.
     </h1>
 
@@ -24,24 +24,26 @@
         this.name = name;
       }
 
-      Hero.prototype.saludar = function() {
-        console.log(`Hola, soy ${this.name}.`);
+      Hero.prototype.greet = function() {
+        console.log(`Hi, I'm ${this.name}.`);
       };
 
       const zelda = new Hero('Zelda');
 
-      // propiedades de la instancia
+      // properties of the instance
       console.log('Name:', zelda.name);
-      // propiedades de la "clase"
-      console.log('Saludar:', zelda.saludar);
 
-      // propiedades heredadas ej: toString
+      
+      // properties of the"class"
+      console.log('Greet:', zelda.greet);
+
+      // properties inherit ex: toString
       console.log('toString:', zelda.toString);
 
-      // hasOwnProperty (de dónde sale toString o esto?)
+      // hasOwnProperty (where does it come from: toString or this ?)
       console.log(
-        'zelda.hasOwnProperty("saludar"):',
-        zelda.hasOwnProperty('saludar')
+        'zelda.hasOwnProperty("greet"):',
+        zelda.hasOwnProperty('greet')
       );
 
       // inspeccionemos el prototipo del zelda
