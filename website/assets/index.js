@@ -2,8 +2,6 @@ import MediaPlayer from './MediaPlayer.js';
 import Autoplay from './plugins/AutoPlay.js';
 
 const video = document.querySelector("video");
-const playButton = document.querySelector("#playButton");
-const muteButton = document.querySelector("#muteButton");
 const timeElement = document.querySelector("#time");
 const durationElement = document.querySelector("#duration");
 
@@ -17,23 +15,21 @@ video.addEventListener("loadedmetadata", () => {
 
 
 
-
-
-
-const player = new MediaPlayer({ el: video, plugins: [
+const player = new MediaPlayer({ 
+  el: video, 
+  plugins: [
+    
     new Autoplay()
-]});
+  ],
+});
 
-playButton.onclick = () => {
-  if (video.paused) {
-    player.play();
-  } else {
-    player.pause();
-  }
-}
+const playButton = document.querySelector("#playButton");
+playButton.onclick = () => player.play();
 
+
+const muteButton = document.querySelector("#muteButton");
 muteButton.onclick = () => {
-  if (video.muted) {
+  if (player.media.muted) {
     player.unmute();
   } else {
     player.mute();
