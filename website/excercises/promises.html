@@ -96,7 +96,7 @@
         const moviePromises = ids.map(id => getMovie(id));
 
         const movie = await Promise.race(moviePromises);
-        return movie;
+        return movie; 
       }
 
       document.getElementById('sequence').onclick = async function() {
@@ -111,7 +111,7 @@
 
       document.getElementById('fastest').onclick = async function() {
         const movie = await getFastestTopMovie();
-        renderMovies([movie]);
+        renderMovies([movie]); 
       };
     </script>
   </body>
