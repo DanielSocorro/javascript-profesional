@@ -8,9 +8,9 @@
     <p><em>Open the console</em></p>
 
     <script>
-      // Los generadores son funciones de las que se puede salir y volver a entrar.
-      // Su contexto (asociación de variables) será conservado entre las reentradas.
-      // Cada vez que llamamos next, la ejecución del generador va a continuar hasta el proximo yield
+      // the generators are functions that can be exited and entered.
+      // Its context (variable association) will be preserved between reentries. 
+      // Every time we call next, the execution of the generator will continue until the next yield  
       function* simpleGenerator() {
         console.log('GENERATOR START');
         yield 1;
