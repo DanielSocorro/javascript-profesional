@@ -21,7 +21,7 @@
 
       // const gen = simpleGenerator();
 
-      // Podemos hacer generadores infinitos.
+      // we can make infinites generators .
       function* idMaker() {
         let id = 1;
         while (true) {
@@ -30,7 +30,7 @@
         }
       }
 
-      // Cuando llamamos next también podemos pasar valores que la función recibe.
+      // When we call next also we can pass values that the function receive
       function* idMakerWithReset() {
         let id = 1;
         let reset;
