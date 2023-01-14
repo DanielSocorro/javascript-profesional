@@ -1,5 +1,6 @@
 import MediaPlayer from './MediaPlayer.js';
-import Autoplay from './plugins/AutoPlay.js';
+import AutoPlay from './plugins/AutoPlay.js';
+import AutoPause from './plugins/AutoPause.js';
 
 const video = document.querySelector("video");
 const timeElement = document.querySelector("#time");
@@ -19,7 +20,7 @@ const player = new MediaPlayer({
   el: video, 
   plugins: [
     
-    new Autoplay()
+    new AutoPlay(), new AutoPause()
   ],
 });
 
