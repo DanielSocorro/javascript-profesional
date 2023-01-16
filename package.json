@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html excercises/index.html excercises/**/*.html"
+    "start": "parcel website/index.html website/**/*.html"
   },
   "repository": {
     "type": "git",
