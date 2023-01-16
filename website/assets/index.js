@@ -18,14 +18,11 @@ video.addEventListener("loadedmetadata", () => {
 
 const player = new MediaPlayer({ 
   el: video, 
-  plugins: [
-    
-    new AutoPlay(), new AutoPause()
-  ],
+  plugins: [new AutoPlay(), new AutoPause()],
 });
 
 const playButton = document.querySelector("#playButton");
-playButton.onclick = () => player.play();
+playButton.onclick = () => player.togglePlay();
 
 
 const muteButton = document.querySelector("#muteButton");
