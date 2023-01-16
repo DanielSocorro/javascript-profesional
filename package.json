@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel website/index.html website/**/*.html"
+    "start": "parcel website/excercises/typescript/index.html website/excercises/typescrip/**/*.html"
   },
   "repository": {
     "type": "git",

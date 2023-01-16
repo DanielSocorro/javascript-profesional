@@ -1,4 +1,4 @@
-// Interfaces
+/* // Interfaces
 enum Color {
   Red = 'Red',
   Green = 'Green',
@@ -29,8 +29,8 @@ rect.toString = function() {
 };
 
 console.log(rect.toString());
-
-
+ */
+/* 
 let people: string[] = [];
 people = ["Maria", "Juana", "Viktor", "Patrick"];
 //people.push(9000) <---- error, because only has to be string
@@ -38,5 +38,12 @@ people = ["Maria", "Juana", "Viktor", "Patrick"];
 
 let peopleAndNumbers: Array< string | number > = []
 peopleAndNumbers.push("Anthony");
-peopleAndNumbers.push(9001);
+peopleAndNumbers.push(9001); */
 
+//print
+console.log('hello, Typescript');
+
+function add(a:number, b: number) {
+  return a + b;
+}
+const sum = add(2,3)
