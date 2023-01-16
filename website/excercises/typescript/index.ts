@@ -1,9 +1,22 @@
-/* // Interfaces
+// Interfaces
 enum Color {
   Red = 'Red',
   Green = 'Green',
   Blue = 'Blue'
 }
+
+let favoriteColor: Color = Color.Blue;
+console.log(`my favorite color is ${favoriteColor}`);
+
+//any
+
+let joker: any = 'Joker';
+joker = { type: 'wildcard' };
+
+//object
+
+let someObject: object = { type: 'wildcard' };
+
 
 interface Rectangle {
   width: number;
@@ -14,7 +27,7 @@ interface Rectangle {
 let rect: Rectangle = {
   width: 4,
   height: 6,
-  // color: Color.Red,
+  //color: Color.Red,
 };
 
 function area(r: Rectangle): number {
@@ -29,8 +42,7 @@ rect.toString = function() {
 };
 
 console.log(rect.toString());
- */
-/* 
+
 let people: string[] = [];
 people = ["Maria", "Juana", "Viktor", "Patrick"];
 //people.push(9000) <---- error, because only has to be string
@@ -38,7 +50,7 @@ people = ["Maria", "Juana", "Viktor", "Patrick"];
 
 let peopleAndNumbers: Array< string | number > = []
 peopleAndNumbers.push("Anthony");
-peopleAndNumbers.push(9001); */
+peopleAndNumbers.push(9001);
 
 //print
 console.log('hello, Typescript');
@@ -46,4 +58,21 @@ console.log('hello, Typescript');
 function add(a:number, b: number) {
   return a + b;
 }
-const sum = add(2,3)
+const sum = add(2, 3);
+
+function createAdder (a: number): (number) => number {
+  return function(b: number) {
+    return b + a;
+ }
+}
+
+const addFour = createAdder(4);
+const fourPlusix = addFour(6);
+
+function fullName(firstName: String, lastName: string = 'Smith'): string {
+  return `${firstName} ${lastName}`;
+}
+
+const daniel = fullName("Agent");
+
+console.log(daniel);
