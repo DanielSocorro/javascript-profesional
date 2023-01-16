@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html excercises/index.html excercises/**/*.html"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/DanielSocorro/javascript-profesional/issues"
   },
-  "homepage": "https://github.com/DanielSocorro/javascript-profesional#readme"
+  "homepage": "https://github.com/DanielSocorro/javascript-profesional#readme",
+  "devDependencies": {
+    "parcel": "^2.8.2"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
 }
