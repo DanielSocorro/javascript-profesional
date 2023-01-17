@@ -22,17 +22,17 @@ const player = new MediaPlayer({
 });
 
 const playButton = document.querySelector("#playButton");
-playButton.onclick = () => player.play();
+playButton.onclick = () => player.togglePlay();
 
 
-/* const muteButton = document.querySelector("#muteButton");
+const muteButton = document.querySelector("#muteButton");
 muteButton.onclick = () => {
   if (player.media.muted) {
     player.unmute();
   } else {
     player.mute();
   }
-} */
+}
 
 video.addEventListener("timeupdate", () => {
     let second = Math.floor(video.currentTime % 60);
