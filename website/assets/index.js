@@ -1,6 +1,6 @@
 import MediaPlayer from './MediaPlayer.js';
 import AutoPlay from './plugins/AutoPlay.js';
-import AutoPause from './plugins/AutoPause.js';
+import AutoPause from './plugins/AutoPause.ts';
 
 const video = document.querySelector("video");
 const timeElement = document.querySelector("#time");
@@ -22,17 +22,17 @@ const player = new MediaPlayer({
 });
 
 const playButton = document.querySelector("#playButton");
-playButton.onclick = () => player.togglePlay();
+playButton.onclick = () => player.play();
 
 
-const muteButton = document.querySelector("#muteButton");
+/* const muteButton = document.querySelector("#muteButton");
 muteButton.onclick = () => {
   if (player.media.muted) {
     player.unmute();
   } else {
     player.mute();
   }
-}
+} */
 
 video.addEventListener("timeupdate", () => {
     let second = Math.floor(video.currentTime % 60);
