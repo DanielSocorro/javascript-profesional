@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel website/index.html"
+    "start": "parcel website/excercises/singleton/index.html"
   },
   "repository": {
     "type": "git",
