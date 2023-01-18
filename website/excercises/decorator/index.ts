@@ -27,7 +27,7 @@ function RequiredFieldDecorator(field: Field): Field {
     validate();
     let value = field.input.value;
     if (!value) {
-      field.errors.push('Requerido');
+      field.errors.push('Required');
     }
   };
 
@@ -42,7 +42,7 @@ function EmailFieldDecorator(field: Field): Field {
     let value = field.input.value;
 
     if (value.indexOf('@') === -1) {
-      field.errors.push('Debe ser un email');
+      field.errors.push('must be a mail');
     }
   };
 

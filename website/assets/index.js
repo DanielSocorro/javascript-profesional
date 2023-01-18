@@ -1,6 +1,7 @@
 import MediaPlayer from './MediaPlayer.ts';
 import AutoPlay from './plugins/AutoPlay.ts';
 import AutoPause from './plugins/AutoPause.ts';
+import Ads from './plugins/Ads/Ads.ts';
 
 const video = document.querySelector("video");
 const timeElement = document.querySelector("#time");
@@ -18,7 +19,7 @@ video.addEventListener("loadedmetadata", () => {
 
 const player = new MediaPlayer({ 
   el: video, 
-  plugins: [new AutoPlay(), new AutoPause()],
+  plugins: [new AutoPlay(), new AutoPause(), new Ads()],
 });
 
 const playButton = document.querySelector("#playButton");
