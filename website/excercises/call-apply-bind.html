@@ -21,23 +21,23 @@
         console.log(`Hi. I'm ${this.name} ${this.lastname}`);
       }
 
-      const richard = {
-        name: 'Richard',
+      const daniel = {
+        name: 'Daniel',
         lastname: 'Kaufman López',
       };
 
-      greet.call(richard);
+      greet.call(daniel);
 
       // Stablish `this` using `call` and passing arguments to the function
       function walk(meters, direction) {
         console.log(`${this.name} walk ${meters} meters to ${direction}.`);
       }
 
-      walk.call(richard, 400, 'west');
+      walk.call(daniel, 400, 'west');
 
       // Stablish `this` using `apply` and throw arguments to the function
       const values = [800, 'noreast'];
-      walk.apply(richard, values);
+      walk.apply(daniel, values);
 
       /*
         Call - comma
@@ -45,7 +45,7 @@
       */
 
       // Stablish `this` in a new fuction using  `bind`
-      const daniel = { name: 'Daniel', lastname: 'Socorro' };
+      const danielS = { name: 'Daniel', lastname: 'Socorro' };
       const danielGreet = greet.bind(daniel);
       danielGreet();
 
